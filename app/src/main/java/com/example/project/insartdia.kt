@@ -28,7 +28,7 @@ import com.google.android.material.navigation.NavigationBarView
 class insartdia : DialogFragment(R.layout.insartdi) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
 
-var a:Button=
+
 
 
 
