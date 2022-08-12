@@ -4,7 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/iGeeK/AndroidStudioProjects/project/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/iGeeK/AndroidStudioProjects/project/app/src/main/res/layout/deletedi.xml" value="0.1" />
+        <entry key="..\:/Users/iGeeK/AndroidStudioProjects/project/app/src/main/res/layout/insartdi.xml" value="0.33" />
+        <entry key="..\:/Users/iGeeK/AndroidStudioProjects/project/app/src/main/res/layout/updatedi.xml" value="0.1" />
         <entry key="..\:/Users/iGeeK/AndroidStudioProjects/project/app/src/main/res/menu/settings.xml" value="0.25" />
+        <entry key="..\:/Users/iGeeK/AndroidStudioProjects/project/app/src/main/res/xml/deletedi.xml" value="0.1" />
+        <entry key="..\:/Users/iGeeK/AndroidStudioProjects/project/app/src/main/res/xml/insartdia.xml" value="0.1" />
+        <entry key="..\:/Users/iGeeK/AndroidStudioProjects/project/app/src/main/res/xml/updatedi.xml" value="0.1" />
       </map>
     </option>
   </component>

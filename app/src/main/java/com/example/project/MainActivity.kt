@@ -59,8 +59,9 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        var dialog_var = insartdia()
         when(item.itemId){
-            R.id.item1 ->Toast.makeText(this, "item 1 selected", Toast.LENGTH_SHORT).show()
+            R.id.item1 -> dialog_var.show(supportFragmentManager, "Custom Dialog")
             R.id.item2 -> Toast.makeText(this, "item 2 selected", Toast.LENGTH_SHORT).show()
             R.id.item3 -> Toast.makeText(this, "Sub-item 1 selected", Toast.LENGTH_SHORT).show()
         }
