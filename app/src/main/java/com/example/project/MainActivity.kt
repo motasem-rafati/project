@@ -16,25 +16,31 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+/*
         var ap: Button = findViewById(R.id.button)
         var bes: TextView = findViewById(R.id.textView)
         var flag: String = "search"
         var cate = arrayOf("search", "games", "food")
         var spin: Spinner = findViewById(R.id.spinner)
         spin.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cate)
-        ap.setOnClickListener {
-            /* if (flag == "search") {
+        val cols = listOf<String>(BEST_APP._ID,BEST_APP.NAME,
+        BEST_APP.TOP).toTypedArray()
 
+        ap.setOnClickListener {
+             if (flag == "search") {
+                 val uri = contentResolver.query(BEST_APP.CONTENT_URI , cols , "category LIKE ?", Array(2){ "search"  },cols[0] )
+ var a :TextView =findViewById(R.id.textView)
 
             } else if (flag == "games") {
+                 val uri = contentResolver.query(BEST_APP.CONTENT_URI , cols , "category LIKE ?", Array(2){ "games"  },cols[0] )
 
-
-            } else
+            } else{
+                 val uri = contentResolver.query(BEST_APP.CONTENT_URI , cols , "category LIKE ?", Array(2){ "food"  },cols[0] )
 
 
         }
 
-            */
+
         }
         spin.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
@@ -50,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-
+*/
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu to use in the action bar
@@ -59,13 +65,34 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
         var dialog_var = insartdia()
+        var dialog_var1 = deletedia()
         when(item.itemId){
             R.id.item1 -> dialog_var.show(supportFragmentManager, "Custom Dialog")
-            R.id.item2 -> Toast.makeText(this, "item 2 selected", Toast.LENGTH_SHORT).show()
-            R.id.item3 -> Toast.makeText(this, "Sub-item 1 selected", Toast.LENGTH_SHORT).show()
+            R.id.item2 -> dialog_var1.show(supportFragmentManager, "Custom Dialog")
+
         }
         return true;
     }
+    fun inserts(values : ContentValues?){
+        val uri = contentResolver.insert(BEST_APP.CONTENT_URI, values)
+
+    }
+    fun delete(appName: String){
+        val uri =contentResolver.delete(BEST_APP.CONTENT_URI,"_id like ?",Array(1){"%$appName%"})
+
+    }
+fun up(values : ContentValues? , appName: String){
+    val uri =contentResolver.update(BEST_APP.CONTENT_URI ,values , "_id like ?" , Array(1){"$appName"})
+
 }
+
+
+}
+
+
+
+
+
 

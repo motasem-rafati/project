@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteQueryBuilder
 import android.net.Uri
 import android.text.TextUtils
 import java.lang.IllegalArgumentException
-import java.util.HashMap
+import java.util.*
 
 class BEST_APP():ContentProvider() {
     companion object {
@@ -25,6 +25,7 @@ class BEST_APP():ContentProvider() {
         val NAME = "name"
 
         val TOP = "top"
+        val CATEGORY =  "category"
 
 
 
@@ -44,7 +45,7 @@ class BEST_APP():ContentProvider() {
 
         val CREATE_DB_TABLE = " CREATE TABLE " + APPS_TABLE_NAME +        " (_id INTEGER PRIMARY KEY AUTOINCREMENT, " + " name TEXT NOT NULL, " +
 
-                " top TEXT NOT NULL);"
+                " category TEXT NOT NULL " + " top TEXT NOT NULL);"
 
     }
 
@@ -117,12 +118,12 @@ class BEST_APP():ContentProvider() {
         return c
     }
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
-        var count = 0
+        var count = 0/*
         when (uriMatcher!!.match(uri)) {
             APPS -> count = db!!.delete(
                 APPS_TABLE_NAME, selection,
                 selectionArgs
-            )
+
            APP_ID -> {
                 val id = uri.pathSegments[1]
                 count = db!!.delete(
@@ -133,12 +134,16 @@ class BEST_APP():ContentProvider() {
                 )
             }
             else -> throw IllegalArgumentException("Unknown URI $uri")
-        }
+        }*/
+        count = db!!.delete(
+        APPS_TABLE_NAME, selection,
+        selectionArgs
+        )
         context!!.contentResolver.notifyChange(uri, null)
         return count
     }
     override fun update(uri: Uri, values: ContentValues?, selection: String?, selectionArgs: Array<String>?): Int {
-        var count = 0
+        var count = 0 /*
         when (uriMatcher!!.match(uri)) {
             APPS -> count = db!!.update(
                 APPS_TABLE_NAME, values, selection,
@@ -151,7 +156,11 @@ class BEST_APP():ContentProvider() {
                 selectionArgs
             )
             else -> throw IllegalArgumentException("Unknown URI $uri")
-        }
+        }*/
+         count = db!!.update(
+        APPS_TABLE_NAME, values, selection,
+        selectionArgs
+        )
         context!!.contentResolver.notifyChange(uri, null)
         return count
     }
