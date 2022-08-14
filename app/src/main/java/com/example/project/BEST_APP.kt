@@ -24,7 +24,7 @@ class BEST_APP():ContentProvider() {
 
         val NAME = "name"
 
-        val TOP = "top"
+        val RANK = "rank"
         val CATEGORY =  "category"
 
 
@@ -45,7 +45,7 @@ class BEST_APP():ContentProvider() {
 
         val CREATE_DB_TABLE = " CREATE TABLE " + APPS_TABLE_NAME +        " (_id INTEGER PRIMARY KEY AUTOINCREMENT, " + " name TEXT NOT NULL, " +
 
-                " category TEXT NOT NULL " + " top TEXT NOT NULL);"
+                " category TEXT NOT NULL, " + " rank TEXT NOT NULL);"
 
     }
 

@@ -13,10 +13,11 @@
 
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="48dp"
         android:hint="new top"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="223dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        tools:layout_editor_absoluteX="16dp" />
 
     <EditText
         android:id="@+id/editText4"
@@ -26,23 +27,26 @@
 
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:hint=" old app name"
+        android:layout_marginTop="20dp"
+        android:hint=" old app id"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editText3"
+        tools:layout_editor_absoluteX="16dp" />
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="130dp"
-        android:layout_height="56dp"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
 
 
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
         android:hint="new category"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="156dp" />
+        app:layout_constraintStart_toEndOf="@+id/editText1"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:layout_width="match_parent"
@@ -57,10 +61,11 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
 
+        android:layout_marginTop="36dp"
         android:text="Update"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="346dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editText4"
+        tools:layout_editor_absoluteX="9dp" />
 
     <EditText
         android:id="@+id/editText1"
@@ -70,29 +75,40 @@
 
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
         android:hint="new name app"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        tools:layout_editor_absoluteY="158dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="298dp"
         android:layout_height="60dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="24dp"
         android:text="update app"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/cancle"
+        android:layout_width="117dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
+        android:text="cancle"
+        app:layout_constraintStart_toEndOf="@+id/add1"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+    <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="cancle"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="341dp" />
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="445dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

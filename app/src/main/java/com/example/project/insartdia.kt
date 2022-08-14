@@ -41,7 +41,7 @@ class insartdia : DialogFragment(R.layout.ins) {
                     (view.findViewById<View>(R.id.editText1) as EditText).text.toString()
                 )
                 values.put(
-                    BEST_APP.TOP,
+                    BEST_APP.RANK,
                     (view.findViewById<View>(R.id.editText2) as EditText).text.toString()
                 )
                values.put(

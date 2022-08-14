@@ -40,12 +40,12 @@ class updatedia : DialogFragment(R.layout.updatedi) {
                 (view.findViewById<View>(R.id.editText1) as EditText).text.toString()
             )
             values.put(
-                BEST_APP.TOP,
-                (view.findViewById<View>(R.id.editText2) as EditText).text.toString()
+                BEST_APP.RANK,
+                (view.findViewById<View>(R.id.editText3) as EditText).text.toString()
             )
           values.put(
                 BEST_APP.CATEGORY,
-                (view.findViewById<View>(R.id.editText3) as EditText).text.toString()
+                (view.findViewById<View>(R.id.editText2) as EditText).text.toString()
             )
 
 

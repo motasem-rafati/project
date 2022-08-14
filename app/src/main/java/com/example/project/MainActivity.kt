@@ -16,26 +16,52 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-/*
+
         var ap: Button = findViewById(R.id.button)
         var bes: TextView = findViewById(R.id.textView)
         var flag: String = "search"
+        var maxi: Int= 0
+        var name :String= ""
         var cate = arrayOf("search", "games", "food")
         var spin: Spinner = findViewById(R.id.spinner)
         spin.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cate)
         val cols = listOf<String>(BEST_APP._ID,BEST_APP.NAME,
-        BEST_APP.TOP).toTypedArray()
+        BEST_APP.RANK).toTypedArray()
 
         ap.setOnClickListener {
              if (flag == "search") {
-                 val uri = contentResolver.query(BEST_APP.CONTENT_URI , cols , "category LIKE ?", Array(2){ "search"  },cols[0] )
+                 val uri = contentResolver.query(BEST_APP.CONTENT_URI , cols , "category LIKE ?", Array(1){ "search"  },cols[0] )
+                 while(uri?.moveToNext()==true){
+                     if(maxi< uri.getInt(2)){
+                        maxi=uri.getInt(2)
+                         name=uri.getString(1)
+                     }
+                 }
  var a :TextView =findViewById(R.id.textView)
+                     a.text=name
 
             } else if (flag == "games") {
-                 val uri = contentResolver.query(BEST_APP.CONTENT_URI , cols , "category LIKE ?", Array(2){ "games"  },cols[0] )
+                 val uri = contentResolver.query(BEST_APP.CONTENT_URI , cols , "category LIKE ?", Array(1){ "games"  },cols[0] )
+                 while(uri?.moveToNext()==true){
+                     if(maxi< uri.getInt(2)){
+                         maxi=uri.getInt(2)
+                         name=uri.getString(1)
+                     }
+                 }
+                 var a :TextView =findViewById(R.id.textView)
+                 a.text=name
 
-            } else{
-                 val uri = contentResolver.query(BEST_APP.CONTENT_URI , cols , "category LIKE ?", Array(2){ "food"  },cols[0] )
+
+             } else{
+                 val uri = contentResolver.query(BEST_APP.CONTENT_URI , cols , "category LIKE ?", Array(1){ "food"  },cols[0] )
+                 while(uri?.moveToNext()==true){
+                     if(maxi< uri.getInt(2)){
+                         maxi=uri.getInt(2)
+                         name=uri.getString(1)
+                     }
+                 }
+                 var a :TextView =findViewById(R.id.textView)
+                 a.text=name
 
 
         }
@@ -56,7 +82,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-*/
+
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu to use in the action bar
@@ -68,9 +94,11 @@ class MainActivity : AppCompatActivity() {
 
         var dialog_var = insartdia()
         var dialog_var1 = deletedia()
+        var dialog_var2 = updatedia()
         when(item.itemId){
             R.id.item1 -> dialog_var.show(supportFragmentManager, "Custom Dialog")
             R.id.item2 -> dialog_var1.show(supportFragmentManager, "Custom Dialog")
+            R.id.item3 -> dialog_var2.show(supportFragmentManager, "Custom Dialog")
 
         }
         return true;
