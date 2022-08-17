@@ -12,10 +12,32 @@ import android.view.MenuItem
 import android.widget.Toast
 import android.view.MenuInflater as MenuInflater1
 
+// -----------------------------------
+
+import android.app.Service
+import android.content.Intent
+import android.media.MediaPlayer
+import android.os.IBinder
+import android.provider.Settings
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
+
+        val toggle = findViewById<View>(R.id.toggleButton) as ToggleButton
+        toggle.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+
+                startService(Intent(this, NewService::class.java))
+            } else {
+                stopService(Intent(this, NewService::class.java))
+            }
+        }
+
 
         var ap: Button = findViewById(R.id.button)
         var bes: TextView = findViewById(R.id.textView)
@@ -115,6 +137,7 @@ fun up(values : ContentValues? , appName: String){
     val uri =contentResolver.update(BEST_APP.CONTENT_URI ,values , "_id like ?" , Array(1){"$appName"})
 
 }
+
 
 
 }

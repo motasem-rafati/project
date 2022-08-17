@@ -69,6 +69,7 @@ class BEST_APP():ContentProvider() {
             db.execSQL(CREATE_DB_TABLE)
         }
 
+
         override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
             db.execSQL("DROP TABLE IF EXISTS $APPS_TABLE_NAME")
             onCreate(db)

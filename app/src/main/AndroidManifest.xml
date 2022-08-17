@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <provider android:name=".BEST_APP" android:authorities="com.example.project.BEST_APP"/>
+        <service android:name=".NewService"/>
     </application>
 
 </manifest>
